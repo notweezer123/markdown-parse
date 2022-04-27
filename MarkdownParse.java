@@ -14,7 +14,15 @@ public class MarkdownParse {
         for (String s: lines){
             if (s.indexOf("(") != -1){
                 int openParentheses = s.indexOf("(");
-                int closeParentheses = s.length()-1;
+                int closeParentheses;
+                if (s.equals(lines[lines.length - 1])) {
+                    closeParentheses = s.length()-1;
+                } else {
+                    closeParentheses = s.length()-2;
+                }
+                if (!(s.charAt(closeParentheses) == ')')) {
+                    continue;
+                }
                 toReturn.add(s.substring(openParentheses + 1, closeParentheses));
             }
         }
