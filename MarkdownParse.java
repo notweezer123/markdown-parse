@@ -12,18 +12,21 @@ public class MarkdownParse {
         String[] lines = markdown.split("\n");
 
         for (String s: lines){
-            if (s.indexOf("(") != -1){
-                int openParentheses = s.indexOf("(");
-                int closeParentheses;
-                if (s.equals(lines[lines.length - 1])) {
-                    closeParentheses = s.length()-1;
-                } else {
-                    closeParentheses = s.length()-2;
-                }
-                if (!(s.charAt(closeParentheses) == ')')) {
-                    continue;
-                }
-                toReturn.add(s.substring(openParentheses + 1, closeParentheses));
+            if ((s.indexOf("(") != -1) &&
+                (s.indexOf("[") != -1 && s.indexOf("]") != -1)){
+                    int openParentheses = s.indexOf("(");
+                    int closeParentheses;
+                    if (s.equals(lines[lines.length - 1])) {
+                        closeParentheses = s.length()-1;
+                    } else {
+                        closeParentheses = s.length()-2;
+                    }
+                    if (!(s.charAt(closeParentheses) == ')')) {
+                        continue;
+                    }
+                    String stringToAdd = s.substring(openParentheses + 1, closeParentheses);
+                    stringToAdd = stringToAdd.replaceAll(" ", "");
+                    toReturn.add(stringToAdd);
             }
         }
         if (toReturn.size() != 0){
