@@ -16,11 +16,11 @@ public class MarkdownParse {
                 (s.indexOf("[") != -1 && s.indexOf("]") != -1)){
                     int openParentheses = s.indexOf("(");
                     int closeParentheses = s.length()-1;
-                    // if (s.equals(lines[lines.length - 1])) {
-                    //     closeParentheses = s.length()-1;
-                    // } else {
-                    //     closeParentheses = s.length()-2;
-                    // }
+                    if (s.equals(lines[lines.length - 1])) {
+                        closeParentheses = s.length()-1;
+                    } else {
+                        closeParentheses = s.length()-2;
+                    }
                     if (!(s.charAt(closeParentheses) == ')')) {
                         continue;
                     }
