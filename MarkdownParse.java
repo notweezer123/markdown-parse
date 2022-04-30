@@ -20,7 +20,6 @@ public class MarkdownParse {
                         continue;
                     }
                     String stringToAdd = s.substring(openParentheses + 1, closeParentheses);
-                    stringToAdd = stringToAdd.replaceAll(" ", "");
                     toReturn.add(stringToAdd);
             }
         }
