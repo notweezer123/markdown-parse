@@ -29,7 +29,7 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testSpaceAroundLink() {
+    public void testWhiteSpaceAroundLink() {
         String contents= "[link title](   a.com   )";
         List<String> expect = List.of("a.com");
         assertEquals(expect, MarkdownParse.getLinks(contents));
