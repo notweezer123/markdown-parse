@@ -10,7 +10,6 @@ public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
         String[] lines = markdown.split("\n");
-        //Change to file!!!!!!
 
         for (String s: lines){
             if ((s.indexOf("(") != -1) &&
