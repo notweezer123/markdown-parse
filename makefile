@@ -4,7 +4,7 @@ MarkdownParse.class: MarkdownParse.java
 	javac MarkdownParse.java
 
 MarkdownParseTest.class: MarkdownParseTest.java MarkdownParse.class
-	javac -g -cp $(CP) MarkdownParseTest.java
+	javac -cp $(CP) MarkdownParseTest.java
 
 test: MarkdownParseTest.class
 	java -cp $(CP) org.junit.runner.JUnitCore MarkdownParseTest 
