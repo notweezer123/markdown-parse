@@ -7,4 +7,4 @@ MarkdownParseTest.class: MarkdownParseTest.java MarkdownParse.class
 	javac -cp $(CP) MarkdownParseTest.java
 
 test: MarkdownParseTest.class
-	java -cp $(CP) org.junit.runner.JUnitCore MarkdownParseTest 
+	java -cp $(CP) org.junit.runner.JUnitCore MarkdownParseTest
