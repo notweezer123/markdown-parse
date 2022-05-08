@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class MarkdownParseTest {
-    //Change to file!!!!!
     
     @Test
     public void testFile1() throws IOException {
