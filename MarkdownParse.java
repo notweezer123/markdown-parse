@@ -18,9 +18,12 @@ public class MarkdownParse {
                     int closeParentheses = s.length()-1;
                     while (!(s.charAt(closeParentheses) == ')')) {
                         if (closeParentheses - 1 == -1) {
-                            continue;
+                            break;
                         }
                         closeParentheses--;
+                    }
+                    if (closeParentheses - 1 == -1) {
+                        continue;
                     }
                     String stringToAdd = s.substring(openParentheses + 1, closeParentheses);
                     stringToAdd = stringToAdd.replaceAll(" ", "");
