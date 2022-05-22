@@ -28,10 +28,10 @@ public class MarkdownParse {
                     String stringToAdd = s.substring(openParentheses + 1, closeParentheses);
                     stringToAdd = stringToAdd.replaceAll(" ", "");
                     stringToAdd = stringToAdd.replaceAll("`", "");
-                    stringToAdd = stringToAdd.replaceAll("(", "");
-                    stringToAdd = stringToAdd.replaceAll(")", "");
-                    stringToAdd = stringToAdd.replaceAll("[", "");
-                    stringToAdd = stringToAdd.replaceAll("]", "");
+                    stringToAdd = stringToAdd.replaceAll("\\(", "");
+                    stringToAdd = stringToAdd.replaceAll("\\)", "");
+                    stringToAdd = stringToAdd.replaceAll("\\[", "");
+                    stringToAdd = stringToAdd.replaceAll("\\]", "");
                     toReturn.add(stringToAdd);
             }
         }
