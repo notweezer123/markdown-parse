@@ -37,6 +37,13 @@ public class MarkdownParseTest {
     }
 
     @Test
+    public void vimTest() {
+        String contents= "[sample text](an-interesting-link.org)";
+        List<String> expect = List.of("an-interesting-link.org");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+    }
+    
+    @Test
     public void testSnippet1() throws IOException {
         String contents= Files.readString(Path.of("./snippet-1.md"));
         List<String> expect = List.of("url.com, google.com", "google.com", "ucsd.edu");
