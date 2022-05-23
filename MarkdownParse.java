@@ -16,22 +16,10 @@ public class MarkdownParse {
                 (s.indexOf("[") != -1 && s.indexOf("]") != -1)){
                     int openParentheses = s.indexOf("(");
                     int closeParentheses = s.length()-1;
-                    while (!(s.charAt(closeParentheses) == ')')) {
-                        if (closeParentheses - 1 == -1) {
-                            break;
-                        }
-                        closeParentheses--;
-                    }
-                    if (closeParentheses - 1 == -1) {
+                    if (!(s.charAt(closeParentheses) == ')')) {
                         continue;
                     }
                     String stringToAdd = s.substring(openParentheses + 1, closeParentheses);
-                    stringToAdd = stringToAdd.replaceAll(" ", "");
-                    stringToAdd = stringToAdd.replaceAll("`", "");
-                    stringToAdd = stringToAdd.replaceAll("\\(", "");
-                    stringToAdd = stringToAdd.replaceAll("\\)", "");
-                    stringToAdd = stringToAdd.replaceAll("\\[", "");
-                    stringToAdd = stringToAdd.replaceAll("\\]", "");
                     toReturn.add(stringToAdd);
             }
         }
