@@ -43,27 +43,27 @@ public class MarkdownParseTest {
         assertEquals(expect, MarkdownParse.getLinks(contents));
     }
     
-    // @Test
-    // public void testSnippet1() throws IOException {
-    //     String contents= Files.readString(Path.of("./snippet-1.md"));
-    //     List<String> expect = List.of("google.com", "google.com", "ucsd.edu");
-    //     assertEquals(expect, MarkdownParse.getLinks(contents));
-    // }
+    @Test
+    public void testSnippet1() throws IOException {
+        String contents= Files.readString(Path.of("./snippet-1.md"));
+        List<String> expect = List.of("google.com");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+    }
 
-    // @Test
-    // public void testSnippet2() throws IOException {
-    //     String contents= Files.readString(Path.of("./snippet-2.md"));
-    //     List<String> expect = List.of("a.com", "a.com", "example.com");
-    //     assertEquals(expect, MarkdownParse.getLinks(contents));
-    // }
+    @Test
+    public void testSnippet2() throws IOException {
+        String contents= Files.readString(Path.of("./snippet-2.md"));
+        List<String> expect = List.of("a.com", "a.com", "example.com");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+    }
 
-    // @Test
-    // public void testSnippet3() throws IOException {
-    //     String contents= Files.readString(Path.of("./snippet-3.md"));
-    //     List<String> expect = List.of(
-    //         "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
-    //     assertEquals(expect, MarkdownParse.getLinks(contents));
-    // }
+    @Test
+    public void testSnippet3() throws IOException {
+        String contents= Files.readString(Path.of("./snippet-3.md"));
+        List<String> expect = List.of(
+            "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+    }
 
     // @Test
     // public void testNestedParens() throws IOException {
